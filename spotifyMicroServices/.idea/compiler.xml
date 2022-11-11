@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="usersongservice" />
+        <module name="spotifyeurekaserver" />
+        <module name="spotifyapigateway" />
+        <module name="userloginservices" />
+        <module name="spotifysongservice" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spotifyapigateway" options="-parameters" />
+      <module name="spotifyeurekaserver" options="-parameters" />
+      <module name="spotifysongservice" options="-parameters" />
+      <module name="userloginservices" options="-parameters" />
+      <module name="usersongservice" options="-parameters" />
+    </option>
+  </component>
+</project>

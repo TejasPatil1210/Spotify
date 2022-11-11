@@ -1,0 +1,15 @@
+server:
+  port: 9100
+spring:
+  data:
+    mongodb:
+      database: songdb
+      uri: mongodb://localhost:27017/
+  application:
+    name: song-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_SERVER_IP:localhost}:${EUREKA_SERVER_PORT:8761}/eureka
+    fetchRegistry: true
+    registerWithEureka: true
