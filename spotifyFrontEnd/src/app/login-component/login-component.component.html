@@ -1,0 +1,22 @@
+
+<br><br>
+<form [formGroup]="loginForm" style="margin-left: 330px;">
+    <h1>Login</h1>
+    <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="userEmail">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password">
+        </mat-form-field>
+      </p>
+      <a routerLink="/accounts/register"><button mat-stroked-button style="color:rgba(249, 245, 247, 0.968); border: 1px solid grey;">
+        Register</button></a>
+      <button mat-stroked-button style="color:rgba(249, 245, 247, 0.968); margin-left: 35px; border: 1px solid grey;" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+      <router-outlet></router-outlet>
+</form>
+  

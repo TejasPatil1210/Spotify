@@ -1,0 +1,43 @@
+<br><br>
+<form [formGroup]="registerForm" style="margin-left: 330px;">
+    <h1>Register</h1>
+    <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="userEmail">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Phone No.</mat-label>
+          <input type="tel" matInput formControlName="phoneNumber">
+          <mat-error *ngIf="registerForm.controls['phoneNumber'].invalid">
+            *Entered Number is not valid!
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" matInput formControlName="confPassword">
+          <mat-error *ngIf="registerForm.controls['confPassword'].invalid">
+            *Passwords are not matching
+          </mat-error>
+        </mat-form-field>
+      </p>
+      
+      <!-- <div *ngIf="registerForm.controls['confPassword'].invalid" style=" color: rgb(244, 28, 28);margin-top: -25px;" >
+        <small></small></div> -->
+    
+     <button mat-stroked-button style="color:rgba(249, 245, 247, 0.968);  border: 1px solid grey;" [disabled]="registerForm.invalid"
+     (click)="storeData()" >Register</button>
+    <button mat-stroked-button style="color:rgba(249, 245, 247, 0.968); margin-left: 35px; border: 1px solid grey;" [disabled]="true">Login</button>
+
+</form>
+

@@ -1,0 +1,36 @@
+#song-viewer {
+    /* margin: 10px auto; */
+    width: 100%;
+    text-align: center;
+
+}
+
+#song-viewer img {
+    height: 400px;
+    width: 50%;
+    
+}
+
+h1{
+    color: white;
+    padding-top: 15px; 
+}
+h3
+{
+    margin-top: -15px;
+    color: white;
+}
+
+mat-slider {
+    
+    width: 650px;
+  }
+
+.slider{
+    margin-top: -5px;
+    margin-left: 261px;
+}  
+
+.sound{
+    width: 100px;
+}

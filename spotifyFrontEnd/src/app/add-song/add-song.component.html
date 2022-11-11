@@ -1,0 +1,36 @@
+<div class="grid-container">
+  <div style="display: inline-block;">
+  <h1 class="mat-h1" style="display:inline-block ;">Add Songs</h1>
+  <button mat-raised-button  (click)="save()" style="margin-left: 1100px; display:inline-block;background-color: rgb(18, 225, 104);color: white; " [disabled]=!saveEnabled >Save</button>
+</div>
+   <mat-grid-list cols="5" rowHeight="330px" class="mat-grid">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="1" [rowspan]="1"> 
+      <mat-card matRipple class="dashboard-card" style="background-color: rgb(58, 54, 54);color: white; " >
+        <a style="text-decoration: none;color:white "> <img src={{card.songImageUrl}} style="width:180px;height:180px;margin-top:2px;margin-left:0px; position:absolute;z-index: 0;
+          position:relative;"/>
+            <br>
+            <br>
+        <mat-card-content class="dashboard-card-content">
+             <h5 > {{card.songName}}</h5>
+              <p style="display: inline; ">{{card.songArtistName}}</p>
+              <button mat-icon-button  (click)="add(card)" style="color: white; background-color: rgb(18, 225, 104); margin-left: 158px; margin-top: -2000px;">
+                <mat-icon style="font-size:32px;width:35px;height:30px;padding-top: 5px; display: inline;">add</mat-icon>                  
+            </button>
+        </mat-card-content>
+      </a>
+      <div>
+      <button mat-icon-button style="color: white;margin-left: 158px; margin-bottom: 250px;">
+        <mat-icon style="font-size:40px;width:35px;height:30px;padding-top: 5px; ">playlist_add</mat-icon>                  
+    </button>
+    <!-- <button mat-icon-button style="color: white;margin-left: 28px; ">
+      <mat-icon style="font-size:40px;width:35px;height:30px;padding-top: 5px; ">playlist_add_check</mat-icon>                  
+  </button> -->
+</div>
+      <!-- <mat-icon>playlist_add</mat-icon>
+      <mat-icon>playlist_add_check</mat-icon> -->
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <router-outlet></router-outlet> 
+</div>
+

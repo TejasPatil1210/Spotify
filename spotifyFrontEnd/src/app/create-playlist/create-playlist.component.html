@@ -1,0 +1,63 @@
+<h1 style="margin-left: 20px;">Your playlists</h1>
+<h3 style="margin-left: 500px; margin-top: 250px;" *ngIf=checkNull>You Haven't Created any Playlist</h3>
+   
+<div id="playlist-viewer" *ngIf=!checkNull >
+        <!-- <code>observable|async</code> -->
+        <!-- <mat-grid-list cols="-1" rowHeight="330px" >
+            <mat-grid-tile *ngFor = "let userSong of userSongData.playlists" [colspan]="1" [rowspan]="1" style="background-color: black;"> -->
+        <mat-card  *ngFor = "let userSong of userSongData.playlists" style="margin-top: 5px; " >
+            <a routerLink="playlistdetail/{{userSong.playListName}}" style="text-decoration: none;color:white;">
+            <img src="https://community.spotify.com/t5/image/serverpage/image-id/25294i2836BD1C1A31BDF2?v=v2">
+            <mat-card-content>
+                <h1>{{userSong.playListName}}</h1>
+                <br>
+                <!-- <h3>{{userSong.songsList.length}} Songs</h3> -->
+                <!-- <div>
+                <button mat-icon-button style="color: white;margin-right: 550px;">
+                    <mat-icon style="font-size:25px;width:35px;height:30px;padding-top: 5px; ">favorite_border</mat-icon>                  
+                </button>            
+                <button mat-icon-button style="color: white;margin-left: 50px;">
+                    <mat-icon style="font-size:25px;width:35px;height:30px;padding-top: 5px; ">more_horiz</mat-icon>                  
+                </button>
+                </div> -->
+                <!-- <div class="example-button-container">
+    
+                    <button mat-icon-button style="color: white;margin-right: 30px; ">
+                        <mat-icon style="font-size:25px;width:35px;height:30px;padding-top: 5px; ">shuffle</mat-icon>                  
+                    </button>
+                    <button mat-icon-button style="color: white;margin-right: 30px; ">
+                        <mat-icon style="font-size:40px;width:35px;height:30px;padding-top: 5px; ">skip_previous</mat-icon>                  
+                    </button>
+                    <button mat-fab style="background-color: rgb(99, 190, 99);">
+                        <mat-icon style="font-size:40px;color:white;padding-bottom: 22px;padding-right: 8px;height: 15px;width: 30px; margin-top:-7px;">play_arrow</mat-icon>
+                    </button>
+                    <button mat-icon-button style="color: white;margin-left: 28px; ">
+                        <mat-icon style="font-size:40px;width:35px;height:30px;padding-top: 5px; ">skip_next</mat-icon>                  
+                    </button>
+                    <button mat-icon-button style="color: white;margin-left: 28px; ">
+                        <mat-icon style="font-size:28px;width:35px;height:30px;padding-top: 5px; ">repeat_one</mat-icon>                  
+                    </button>
+                  </div>
+                  <br>
+                  <div class="slider">
+                    <span>0:00 </span> -->
+                    <!-- <mat-progress-bar mode="determinate" value="40" style="width: 50%;"></mat-progress-bar> -->
+                    <!-- <mat-slider aria-label="unit(s)"></mat-slider>
+                    <span>{{userSong}}</span>
+                    <button mat-icon-button style="color: white;margin-left: 35px; ">
+                        <mat-icon style="font-size:28px;width:35px;height:30px;padding-top: 5px; ">playlist_add</mat-icon>                  
+                    </button>
+                    <button mat-icon-button style="color: white;">
+                        <mat-icon style="font-size:28px;width:35px;height:30px;padding-top: 5px; ">volume_up</mat-icon>                  
+                    </button>
+                    <mat-slider class="sound" aria-label="unit(s)" value="70"></mat-slider>
+    
+                  </div> -->
+            </mat-card-content>    
+            <!-- <h6>Song Category Category: {{song.songGenre}}</h6> -->
+        </a>
+        </mat-card>
+            <!-- </mat-grid-tile>
+        </mat-grid-list> -->
+        <router-outlet></router-outlet>
+    </div>    

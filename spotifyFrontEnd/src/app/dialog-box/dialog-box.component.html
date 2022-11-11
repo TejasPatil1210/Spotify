@@ -1,0 +1,10 @@
+<form [formGroup]="dialogForm">              
+    <mat-form-field color="accent" class="example-full-width" appearance="fill" style="width: 420px;margin-top: 0px;">
+        <mat-label>Playlist Name:</mat-label>
+        <input type="text" matInput formControlName="playListName" >
+      </mat-form-field>
+      <br>
+      <button mat-raised-button (click)="createPlayList()" [disabled]="dialogForm.invalid">Create</button>
+      <button mat-raised-button mat-dialog-close style="margin-left: 275px;">Cancel</button>
+      <br>
+</form>      

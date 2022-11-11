@@ -1,0 +1,67 @@
+<div id="song-viewer">
+    <!-- <code>observable|async</code> -->
+    <mat-card  *ngIf = "songObservable | async; let song" style="margin-top: 0px;">
+        <img [src]="song.songImageUrl">
+        <mat-card-content>
+            <h1>{{song.songName}}</h1>
+            <br>
+            <h3>{{song.songArtistName}}</h3>
+            <div>
+            <button mat-icon-button style="color: white;margin-right: 550px;">
+                <mat-icon style="font-size:25px;width:35px;height:30px;padding-top: 5px; ">favorite_border</mat-icon>                  
+            </button>            
+            <button mat-icon-button style="color: white;margin-left: 50px;">
+                <mat-icon style="font-size:25px;width:35px;height:30px;padding-top: 5px; ">more_horiz</mat-icon>                  
+            </button>
+        </div>
+            <div class="example-button-container">
+
+                <button mat-icon-button style="color: white;margin-right: 30px; ">
+                    <mat-icon style="font-size:25px;width:35px;height:30px;padding-top: 5px; ">shuffle</mat-icon>                  
+                </button>
+                <button mat-icon-button style="color: white;margin-right: 30px; ">
+                    <mat-icon style="font-size:40px;width:35px;height:30px;padding-top: 5px; ">skip_previous</mat-icon>                  
+                </button>
+                <button mat-fab style="background-color: rgb(99, 190, 99);">
+                    <mat-icon style="font-size:40px;color:white;padding-bottom: 22px;padding-right: 8px;height: 15px;width: 30px; margin-top:-7px;">play_arrow</mat-icon>
+                </button>
+                <button mat-icon-button style="color: white;margin-left: 28px; ">
+                    <mat-icon style="font-size:40px;width:35px;height:30px;padding-top: 5px; ">skip_next</mat-icon>                  
+                </button>
+                <button mat-icon-button style="color: white;margin-left: 28px; ">
+                    <mat-icon style="font-size:28px;width:35px;height:30px;padding-top: 5px; ">repeat_one</mat-icon>                  
+                </button>
+              </div>
+              <br>
+              <div class="slider">
+                <span>0:00 </span>
+                <!-- <mat-progress-bar mode="determinate" value="40" style="width: 50%;"></mat-progress-bar> -->
+                <mat-slider aria-label="unit(s)"></mat-slider>
+                <span>{{song.songDuration}}</span>
+                <button mat-icon-button style="color: white;margin-left: 35px; ">
+                    <mat-icon style="font-size:28px;width:35px;height:30px;padding-top: 5px; ">playlist_add</mat-icon>                  
+                </button>
+                <button mat-icon-button style="color: white;">
+                    <mat-icon style="font-size:28px;width:35px;height:30px;padding-top: 5px; ">volume_up</mat-icon>                  
+                </button>
+                <mat-slider class="sound" aria-label="unit(s)" value="70"></mat-slider>
+
+              </div>
+        </mat-card-content>    
+        <!-- <h6>Song Category Category: {{song.songGenre}}</h6> -->
+    </mat-card>
+
+</div>
+<!-- <mat-icon>fast_forward</mat-icon>
+    <mat-icon>delete</mat-icon>
+<mat-icon>fast_rewind</mat-icon>
+<mat-icon>pause</mat-icon>
+
+<mat-icon>playlist_add</mat-icon>
+<mat-icon>playlist_add_check</mat-icon>
+<mat-icon>playlist_play</mat-icon>
+<mat-icon>repeat_one</mat-icon>
+<mat-icon>clear</mat-icon>
+<mat-icon>repeat</mat-icon>
+<mat-icon>shuffle</mat-icon> -->
+

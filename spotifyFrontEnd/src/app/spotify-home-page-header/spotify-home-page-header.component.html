@@ -1,0 +1,67 @@
+
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false"  style="background-color:rgba(0, 0, 0, 0.747); color:white">
+     <mat-toolbar><a routerLink="/home"><img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" width="150px" style="margin-top: 12px;" ></a></mat-toolbar> 
+    <mat-nav-list style="color:white">
+      <a mat-list-item routerLink="/home"><mat-icon>home</mat-icon><pre> </pre><span>Home</span></a>
+      <a mat-list-item href="" style="color:white"><mat-icon>search</mat-icon><pre> </pre><span>Search</span></a>
+      <a mat-list-item routerLink="playlist" style="color:white" ><mat-icon>library_music</mat-icon><pre> </pre><span>Your Playlists</span></a>
+      <!-- <a mat-list-item href="#" style="color:white"><mat-icon>video_library</mat-icon><pre> </pre><span>Library</span></a>
+      <a mat-list-item href="#" style="color:white"><mat-icon>history</mat-icon><pre> </pre><span>History</span></a> -->
+    </mat-nav-list>
+
+    <mat-toolbar>Playlists</mat-toolbar>
+     <mat-nav-list style="color:white; margin-top: -25px;" > 
+     <a mat-list-item (click)="opendialog()" style="color:white"><mat-icon style="text-align: center;padding-top: 5px; background-color:whitesmoke;font-size:x-large; width: 35px;height: 30px; color:black;">add</mat-icon><pre> </pre><span>Create Playlist</span></a>
+     <a mat-list-item href="#" style="color:white"><mat-icon style="text-align: center;padding-top: 5px; background-color:rgba(105, 220, 244, 0.378);font-size:x-large; width: 35px;height: 30px; color:red;">favorite</mat-icon><pre> </pre><span>Liked songs</span></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="accent" style=" background-color:rgba(0, 0, 0, 0.747);; color: white;">
+      <!-- rgba(23, 225, 84, 0.993) -->
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          
+      </button>
+      <!-- <span>spotify</span> -->
+      <div style="margin-left:965px ;" >
+        <button  mat-flat-button  [matMenuTriggerFor]="menu1" style="background-color: white; color: black;margin: 10px;padding-left: 15px;padding-right: 20px;border-radius: 20px;" *ngIf=checkUserAuth><mat-icon>account_circle</mat-icon><span>{{ userLogData.userEmail }}</span><pre style="display:inline ;">  </pre><mat-icon>arrow_drop_down</mat-icon></button>
+      <button  mat-flat-button (click)="signUp()" style="background-color: white; color: black;margin: 10px;padding-left: 25px;padding-right: 25px;border-radius: 20px; " *ngIf=!checkUserAuth>Sign Up</button>
+        <!-- <button mat-icon-button matTooltip="Create Video"><mat-icon><a routerLink="/studioUrl/uploadvid" style="color: white">video_call</a></mat-icon></button> -->
+        <button mat-flat-button (click)="logIn()" style="background-color: white; color: black; margin: 10px;padding-left: 25px;padding-right: 25px;border-radius: 20px;"*ngIf=!checkUserAuth>Log In</button>
+        <!-- <button mat-icon-button [matMenuTriggerFor]="menu1" matTooltip="Manage Profile"><mat-icon>person_outline</mat-icon></button> -->
+      </div>
+      <!-- <mat-icon>keyboard_arrow_down</mat-icon>
+      <mat-icon>arrow_drop_down</mat-icon> -->
+      <mat-menu #menu1="matMenu"  >
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Settings</span>
+        </button>
+        <button mat-menu-item >
+          <mat-icon>help</mat-icon>
+          <span>Help</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+        <button mat-menu-item (click)="userLogOut()">
+          <mat-icon>exit_to_app</mat-icon>Logout
+        </button>
+      </mat-menu>
+    </mat-toolbar>    
+    <!-- <app-spotify-home-page></app-spotify-home-page>     -->
+    <router-outlet></router-outlet>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

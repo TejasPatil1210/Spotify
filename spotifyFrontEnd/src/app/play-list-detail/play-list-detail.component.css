@@ -1,0 +1,30 @@
+/* #playlist-viewer {
+    margin: 20px; 
+   width: 18%;
+   text-align: center;
+   height: 240px;
+} */
+
+#playlist-viewer img {
+   height: 150px  ;
+   width: 150px;
+   
+}
+mat-card {
+   width: 180px;
+   height: 250px;
+   display: inline-block;
+   margin: 20px;
+   text-align: center;
+}
+h2{
+   color: white;
+   /* padding-top: 1px;  */
+}
+h5
+{
+   margin-top: -15px;
+   color: white;
+}
+
+

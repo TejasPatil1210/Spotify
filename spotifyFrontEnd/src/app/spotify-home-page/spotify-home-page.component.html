@@ -1,0 +1,65 @@
+<div class="grid-container">
+  <!-- <h1 class="mat-h1">Dashboard</h1> -->
+  <!-- <div [class.view-image-list]="xyz.isActivated"> -->
+  <mat-grid-list cols="5" rowHeight="330px" class="mat-grid">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="1" [rowspan]="1">
+  
+      <mat-card matRipple class="dashboard-card" style="background-color: rgb(58, 54, 54);color: white; " >
+        <a routerLink="playmusic/{{card.songName}}" style="text-decoration: none;color:white "> <img src={{card.songImageUrl}} style="width:180px;height:180px;margin-top:2px;margin-left:0px; position:absolute;z-index: 0;
+          position:relative;"/>
+            <!-- <div> 
+            <small style="position:absolute;z-index:1;background-color: black;color: white;margin-left:250px;top: 45%;
+            right: 4%;
+            width: auto;
+            height: 20px;
+            text-align: right;
+            padding: 1px 6px;">
+              {{ card.songName }} </small>
+            </div> -->
+            <br>
+            <br>
+        <mat-card-content class="dashboard-card-content">
+            <!-- <div style="margin-top:170px;position: relative;"> -->
+            <!-- <mat-card-title style="font-size:20px"> -->
+             <h5> {{card.songName}}</h5>
+            <!-- </mat-card-title> -->
+          <!-- </div> -->
+          <!-- <div style="margin-top: 10px; position:relative;"> -->
+              <p>{{card.songArtistName}}</p>
+            <!-- </div> -->
+            <!-- <div style="position: relative;margin-top:-10px;"> -->
+            <!-- <p>
+              {{card.songId}} views. {{card.songGenre}}              
+            </p> -->
+          <!-- </div> -->
+        </mat-card-content>
+      </a>
+      </mat-card>
+  
+ 
+      <!-- <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.songName}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>Card Content Here</div>
+        </mat-card-content>
+      </mat-card> -->
+    </mat-grid-tile>
+  </mat-grid-list>
+<!-- </div>
+<div [class.view-large-image]="xyz.isActivated">
+    <router-outlet #xyz="outlet"></router-outlet>
+</div> -->
+  <router-outlet></router-outlet> 
+</div>
+
